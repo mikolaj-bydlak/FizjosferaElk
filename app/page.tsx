@@ -259,7 +259,7 @@ export default function Home() {
             <div className="cennik-divider" />
 
             <div className="price-list">
-              <div className="price-row" style={{ gap: '8px 30px' }}>
+              <div className="price-row">
                 <div className="price-name">Konsultacja fizjoterapeutyczna</div>
                 <div className="price-min">60 min</div>
                 <div className="price-amount">150 zł</div>
@@ -269,15 +269,12 @@ export default function Home() {
               <div className="price-group-label">
                 Fizjoterapia uroginekologiczna
               </div>
-              <div className="price-row price-indent" style={{ gap: '10px 30px' }}>
+              <div className="price-row price-indent">
                 <div className="price-sub">I wizyta</div>
                 <div className="price-min">90 min</div>
                 <div className="price-amount">200 zł</div>
               </div>
-              <div
-                className="price-row price-indent"
-                style={{ gap: '10px 30px', marginTop: '10px' }}
-              >
+              <div className="price-row price-indent" style={{ marginTop: '10px' }}>
                 <div className="price-sub">Kolejna wizyta</div>
                 <div className="price-min">60 min</div>
                 <div className="price-amount">180 zł</div>
