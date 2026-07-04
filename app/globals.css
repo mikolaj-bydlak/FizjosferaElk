@@ -210,6 +210,35 @@ summary:focus-visible {
   display: block;
 }
 
+/* X close button — lives inside the mobile panel; hidden on desktop. */
+.nav-close {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: clamp(20px, 5vw, 64px);
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-close span {
+  position: absolute;
+  width: 26px;
+  height: 2px;
+  background: var(--green-deep);
+  border-radius: 2px;
+}
+.nav-close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.nav-close span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
 /* ============================================================
    HERO
    ============================================================ */
@@ -798,26 +827,46 @@ details.faq-item {
 }
 
 @media (max-width: 820px) {
-  .nav-links {
-    display: none;
-  }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    position: absolute;
-    top: calc(100% + 18px);
-    left: 0;
-    right: 0;
-    background: var(--green-deep);
-    padding: 24px clamp(20px, 5vw, 32px);
-    border-radius: 4px;
-    z-index: 60;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-  }
   .nav-toggle {
     display: flex;
+  }
+  .nav-close {
+    display: flex;
+  }
+
+  /* Full-width beige panel that slides down from the top of the viewport,
+     sized to just fit the menu options (not full screen height). */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 100vh;
+    background: var(--cream-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    padding: 84px 24px 40px;
+    overflow-y: auto;
+    /* Use a viewport-relative offset (not % of the auto-height box) so the
+       slide reliably animates. -100vh keeps the panel fully off-screen. */
+    transform: translateY(-100vh);
+    visibility: hidden;
+    /* Animate the slide; snap visibility hidden only after it finishes. */
+    transition: transform 0.35s ease, visibility 0s linear 0.35s;
+    z-index: 100;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  }
+  .nav-links.open {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.35s ease, visibility 0s linear 0s;
+  }
+  .nav-link {
+    color: var(--green-deep);
+    font-size: 16px;
   }
 }
 
