@@ -1,3 +1,12 @@
+/**
+ * Prefix for site-local assets. Empty locally / on root-domain hosts;
+ * set to the repo basePath on GitHub Pages (see next.config.mjs).
+ */
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
+/** Resolve a public asset path, accounting for basePath on subpath hosts. */
+export const asset = (path: string): string => `${BASE_PATH}${path}`;
+
 /** External links — wired exactly as specified in the handoff. */
 export const LINKS = {
   booksy: 'https://booksy.com/pl-pl/296751_fizjosfera_fizjoterapia_6803_elk',

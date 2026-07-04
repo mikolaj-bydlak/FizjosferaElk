@@ -1,6 +1,6 @@
 import Nav from '../components/Nav';
 import HeroBadge from '../components/HeroBadge';
-import { LINKS } from './site';
+import { LINKS, asset } from './site';
 
 const SERVICES = [
   {
@@ -144,7 +144,7 @@ export default function Home() {
           <div className="about-grid">
             <div className="about-portrait">
               <img
-                src="/static/kasia.png"
+                src={asset('/static/kasia.png')}
                 alt="Katarzyna Marcinkowska-Kononowicz — fizjoterapeutka"
                 width={1363}
                 height={1712}
@@ -222,7 +222,7 @@ export default function Home() {
           <div className="gallery-grid">
             <div className="ph">
               <img
-                src="/static/studio1.jpeg"
+                src={asset('/static/studio1.jpeg')}
                 alt="Gabinet Fizjosfera — stół i drabinki"
                 width={2340}
                 height={2340}
@@ -230,7 +230,7 @@ export default function Home() {
             </div>
             <div className="ph">
               <img
-                src="/static/studio3.jpeg"
+                src={asset('/static/studio3.jpeg')}
                 alt="Gabinet Fizjosfera — stół przy oknie"
                 width={2340}
                 height={2340}
@@ -238,7 +238,7 @@ export default function Home() {
             </div>
             <div className="ph">
               <img
-                src="/static/studio2.jpeg"
+                src={asset('/static/studio2.jpeg')}
                 alt="Gabinet Fizjosfera — lustro i przestrzeń do ćwiczeń"
                 width={2340}
                 height={2340}
