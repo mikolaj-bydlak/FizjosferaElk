@@ -169,6 +169,7 @@ summary:focus-visible {
   letter-spacing: 5px;
   color: var(--cream-text);
   text-decoration: none;
+  white-space: nowrap;
 }
 .nav-links {
   display: flex;
@@ -838,5 +839,15 @@ details.faq-item {
   }
   .map-embed {
     min-height: 320px;
+  }
+  /* Stack the hero CTAs and give them a single, equal width. */
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
   }
 }
