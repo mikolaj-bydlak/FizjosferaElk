@@ -1,5 +1,4 @@
 import Nav from '../components/Nav';
-import HeroBadge from '../components/HeroBadge';
 import { LINKS, asset } from './site';
 
 const SERVICES = [
@@ -93,13 +92,13 @@ export default function Home() {
           <Nav />
 
           <div className="hero-lockup">
-            <HeroBadge />
-
-            <div className="hero-wordmark">
-              <span>FIZJO</span>
-              <span>SFERA</span>
-            </div>
-            <div className="hero-sublockup">GABINET · FIZJOTERAPII</div>
+            <img
+              className="hero-logo"
+              src={asset('/static/logo-hero.png')}
+              alt="Fizjosfera — Katarzyna Marcinkowska-Kononowicz · Gabinet fizjoterapii"
+              width={890}
+              height={588}
+            />
 
             <h1 className="hero-h1">
               Zdrowie kobiety w troskliwych, doświadczonych rękach
@@ -165,10 +164,13 @@ export default function Home() {
                 Fizjosfera to miejsce, które stworzyłam z myślą o kobietach — ich
                 zdrowiu, komforcie i poczuciu bezpieczeństwa. To przestrzeń, w
                 której łączę wiedzę medyczną z kompleksowym podejściem do ciała i
-                emocji.
+                emocji. Poza przestrzenią Fizjosfery możesz spotkać mnie w Chic
+                Pole Dance &amp; Pilates Studio, gdzie prowadzę zajęcia „Ciąża w
+                ruchu” oraz gabinecie Reha Pelvi, w którym mam możliwość pracy na
+                technologii INDIBA®.
               </p>
               <p className="about-p">
-                Prywatnie jestem żoną i mamą rocznej dziewczynki, której narodziny
+                Prywatnie jestem żoną i mamą małej dziewczynki, której narodziny
                 uświadomiły mi, jak ważna jest troska o siebie — szczególnie w
                 okresie okołoporodowym. W wolnych chwilach z przyjemnością sięgam
                 po książki, a jeszcze niedawno można było spotkać mnie na ściance
@@ -477,6 +479,11 @@ export default function Home() {
                 Facebook · Fizjosfera
               </a>
             </div>
+          </div>
+          <div className="foot-legal">
+            <a className="lnk" href={asset('/regulamin/')}>
+              Regulamin
+            </a>
           </div>
           <div className="foot-copy">
             © 2026 Fizjosfera · Katarzyna Marcinkowska-Kononowicz · Ełk · Wizyty po
