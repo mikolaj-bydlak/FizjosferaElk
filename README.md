@@ -21,6 +21,22 @@ npm run build    # production build → static export in out/
 
 Deploy the contents of `out/` to any static host (Vercel, Netlify, GitHub Pages, S3, …).
 
+## Deploy: Cloudflare Workers (fizjosferaelk.pl)
+
+The site deploys as a **Cloudflare Worker with static assets** — no worker script and
+**no secrets/keys in the repo** ([`wrangler.jsonc`](wrangler.jsonc) points at `out/`).
+
+1. [Cloudflare dashboard](https://dash.cloudflare.com) → **Workers & Pages → Create application**
+   → **Import a repository** → select this repo (branch: `main`).
+2. Build settings:
+   - **Build command:** `npm run build`
+   - **Deploy command:** `npx wrangler deploy` (default)
+3. After the first deploy: worker **Settings → Domains & Routes → Add → Custom Domain**
+   → `fizjosferaelk.pl` (and `www.fizjosferaelk.pl`). Requires the domain's DNS to be
+   managed by Cloudflare (set Cloudflare nameservers at the registrar); SSL is automatic.
+
+Local check without deploying: `npm run build && npx wrangler deploy --dry-run`.
+
 ## Structure
 
 | Path | Purpose |
